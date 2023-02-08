@@ -1,7 +1,4 @@
-from rich.console import Console
-
-console = Console()
-
+from pprint import pprint
 
 def signup(name, email, password, confirm_password):
 
@@ -15,25 +12,25 @@ def signup(name, email, password, confirm_password):
             if confirm_password == password:
                 
                 if len(password) < 8:
-                    console.log("Password is too short")
+                    pprint("Password is too short")
                 else:
                     
                     if email.endswith("@gmail.com"):
-                        console.log({"username":name, "email":email, "password":password})
+                        pprint({"username":name, "email":email, "password":password})
                     else:
-                        console.log({"Error" : "Invalid mail"})
+                        pprint({"Error" : "Invalid mail"})
             
             else:
-                console.log({"Error" : "Passwords do not match"})
+                pprint({"Error" : "Passwords do not match"})
         else:
-            console.log({"Error" : "Username too short"})
+            pprint({"Error" : "Username too short"})
     
     except Exception as e:
-        console.log({"Error" : e})
+        pprint({"Error" : e})
 
 
 signup(
-    "Shk",
+    "Shad",
     "examplemail@gmail.com",
     "examplepassword",
     "examplepassword"
