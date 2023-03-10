@@ -4,13 +4,9 @@ from math import sqrt
 from time import time, perf_counter
 from dataclasses import dataclass
 from abc import ABC, abstractmethod
-from functools import lru_cache
-from numba import jit
-
 
 
 # excluding cross-cutting concers
-
 def is_prime(number: int) -> bool:
 
     if number < 2:
