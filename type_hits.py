@@ -4,10 +4,10 @@ from dataclasses import dataclass
 from pydantic import BaseModel, EmailStr
 
 # using type hints str, int, float, bool
-username: str = None
-email: str = None
-phone: int = None
-password: str = None
+username: str = ''
+email: str = ''
+phone: int = 0
+password: str = ''
 
 
 def user_details(
