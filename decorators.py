@@ -82,4 +82,23 @@ def check_mail(email: str):
     return email
 
 if __name__ == '__main__':
-    print(check_mail('shadcodes@gmail.com'))
+    # the decorator
+    def kinky(func:callable) -> callable:
+
+        def wrapper(*args, **kwargs):
+            if args is True or kwargs.keys is True:
+                print("Kinky")
+                func(*args, **kwargs)
+            else:
+                print("Not kinky")
+                func(*args, **kwargs)
+
+        return wrapper
+
+
+    @kinky
+    def im_horny(state:bool):
+        return
+
+
+    im_horny(state=True)
