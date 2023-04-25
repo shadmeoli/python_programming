@@ -5,7 +5,7 @@ def getPrimes(nums: list[int]) -> list[int]:
 # def rev(vals: str) -> str:
 #     return ''.join([vals[len(vals)-1-idx] for idx, i in enumerate(vals)])
 
-rev = lambda vals: ''.join([vals[len(vals)-1-idx] for idx, i in enumerate(vals)])
+reverse = lambda vals: ''.join([vals[len(vals)-1-idx] for idx, i in enumerate(vals)])
 
 # find missing
 '''
@@ -16,11 +16,11 @@ rev = lambda vals: ''.join([vals[len(vals)-1-idx] for idx, i in enumerate(vals)]
     output: 3
 '''
 
-def missing(arr1, arr2) -> int:
-    try:
-        return [i for i in arr1 if i not in arr2][0]
-    except:
-        return "Looks fine"
+# def missing(arr1, arr2) -> int:
+#     try:
+#         return [i for i in arr1 if i not in arr2][0]
+#     except:
+#         return "Looks fine"
     # for idx, i in enumerate(arr1):
 
     #     if i not in arr2:
@@ -29,5 +29,18 @@ def missing(arr1, arr2) -> int:
     #     else:
     #         continue
 
+missing = lambda arr1, arr2 : [i for i in arr1 if i not in arr2][0]
+# print(missing([2, 3, 4, 7, 9], [2, 4, 7, 9]))
 
-print(missing([2, 3, 4, 7, 9], [2, 3, 4, 7, 9]))
+
+
+def mod_rev(arr):
+
+    res = []
+    for i in range(0, len(arr) // 2):
+        res.append(arr[i])
+        res.append(arr[len(arr)-i-1])
+    return res
+
+
+print(mod_rev([1,2,3,4,5,6,7,8,9]))
