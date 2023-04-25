@@ -17,7 +17,10 @@ rev = lambda vals: ''.join([vals[len(vals)-1-idx] for idx, i in enumerate(vals)]
 '''
 
 def missing(arr1, arr2) -> int:
-    return [i for i in arr1 if i not in arr2][0]
+    try:
+        return [i for i in arr1 if i not in arr2][0]
+    except:
+        return "Looks fine"
     # for idx, i in enumerate(arr1):
 
     #     if i not in arr2:
@@ -27,4 +30,4 @@ def missing(arr1, arr2) -> int:
     #         continue
 
 
-print(missing([2, 3, 4, 7, 9], [2, 4, 7, 9]))
+print(missing([2, 3, 4, 7, 9], [2, 3, 4, 7, 9]))
